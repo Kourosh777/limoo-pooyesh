@@ -33,7 +33,7 @@ Route::middleware('auth')->group(function () {
 Route::post('get-child-shahrestans',[\App\Http\Controllers\HomeController::class,'getChildShahrestans']);
 
 
-Route::middleware('auth')->group(function (){
+Route::middleware(['auth','can:is_admin'])->group(function (){
 
 Route::get('admin',function (){
    return view('admin.index');

@@ -51,6 +51,11 @@
                             <input type="submit" value="ثبت اطلاعات" class="btn-submit btn mx-auto py-2 btn-primary">
                         </div>
                     </form>
+
+                    <div class="text-center text-white" style="font-weight: bold; font-size: 1.3rem;">
+                        شمارنده تعداد شرکت کننده ها :
+                        <span style="font-size: 1.5rem;">{{ $registerd_count }}</span>
+                    </div>
                 </div>
 
           </div>

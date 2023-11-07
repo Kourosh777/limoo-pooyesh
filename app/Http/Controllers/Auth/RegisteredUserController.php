@@ -24,7 +24,8 @@ class RegisteredUserController extends Controller
     {
         $ostans=Ostan::all();
         $shahrestans=Shahrestan::where('ostan',1)->get();
-        return view('site.auth.register',compact('ostans','shahrestans'));
+        $registerd_count=User::all()->count();
+        return view('site.auth.register',compact('ostans','shahrestans','registerd_count'));
         /*return view('site.auth.register');
         return view('auth.register');*/
     }

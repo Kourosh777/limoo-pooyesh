@@ -48,8 +48,8 @@
                         <tr>
                             <td>{{ $user->id }}</td>
                             <td>{{ $user->name }}</td>
-                            <td>{{ $user->ostan_id }}</td>
-                            <td>{{ $user->shahrestan_id }}</td>
+                            <td>{{ $user->ostan()->first()?->name }}</td>
+                            <td>{{ $user->shahrestan?->name }}</td>
                             <td>{{ $user->phone_number }}</td>
                             <td>{{ jdate($user->created_at)->format('Y/m/d') }}</td>
 {{--                            <td><span class="label label-success">تایید شده</span></td>--}}
@@ -60,6 +60,11 @@
                     </table>
                 </div>
                 <!-- /.box-body -->
+
+                <div class="box-footer clearfix">
+                    {{ $users->links() }}
+                </div>
+
             </div>
             <!-- /.box -->
         </div>

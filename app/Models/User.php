@@ -45,4 +45,11 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+    public function ostan(){
+        return $this->belongsTo(Ostan::class);
+    }
+
+    public function shahrestan(){
+     return $this->belongsTo(Shahrestan::class);
+    }
 }

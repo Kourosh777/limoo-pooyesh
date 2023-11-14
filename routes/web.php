@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -39,5 +40,12 @@ Route::get('admin',function (){
    return view('admin.index');
 });
 Route::get('admin/user/index',[\App\Http\Controllers\Admin\UserController::class,'index'])->name('admin.user.index');
+    Route::post('users/search',[UserController::class,'filterUsers'])->name('users.search');
+    Route::get('users/search/show',[UserController::class,'filterUsersShow'])->name('users.search.show');
+    Route::get('users/filter/export-excel',[UserController::class,'exportExcel'])->name('users.export-excel');
+    /*Route::get('users/search/show',[UserController::class,'filterUsersShow'])->middleware('can:is_superadmin')->name('users.search.show');
+    Route::get('users/filter/export-excel',[UserController::class,'exportExcel'])->name('users.export-excel');*/
+
+
 });
 require __DIR__.'/auth.php';
